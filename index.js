@@ -2,13 +2,15 @@ const androidAPP =
   "https://play.google.com/store/apps/details?id=com.safarifone.waafi&hl=en";
 const iosAPP = "https://apps.apple.com/us/app/waafi-app/id1164281864";
 
+require("dotenv").config();
+
 const { getDeviceType } = require("./utils");
 
 const express = require("express");
 
 const app = express();
 
-const PORT = "3000";
+const port = process.env.PORT;
 
 app.get("/", async (req, res) => {
   const headers = req.headers;
@@ -20,6 +22,6 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Listening on PORT: ${PORT}`);
+app.listen(port, () => {
+  console.log(`Listening on PORT: ${port}`);
 });
