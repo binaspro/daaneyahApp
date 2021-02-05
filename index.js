@@ -10,7 +10,7 @@ const express = require("express");
 
 const app = express();
 
-const port = process.env.PORT;
+app.set("port", process.env.PORT || 3000);
 
 app.get("/", async (req, res) => {
   const headers = req.headers;
@@ -22,6 +22,6 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Listening on PORT: ${port}`);
+app.listen(app.get("port"), () => {
+  console.log(`Listening on PORT: ${app.get("port")}`);
 });
