@@ -1,5 +1,5 @@
-const androidAPP =
-  "https://play.google.com/store/apps/details?id=com.safarifone.waafi&hl=en";
+const androidAPP = "market://details?id=com.safarifone.waafi";
+
 const iosAPP = "https://apps.apple.com/us/app/waafi-app/id1164281864";
 
 require("dotenv").config();
